@@ -15,17 +15,13 @@ contract NETFLIX_NFT is ERC721 {
         ERC721(_name, _symbol)
     {}
 
-
     function batchCreate(address _to , uint256[] memory _tokenIds , string[] memory _strs) public {
          FileItem[] memory fileItems;
 
          for (uint256 i =0; i< _tokenIds.length; i++ ){
              createItem(_strs[i], _to , _tokenIds[i]);
          }
-
     }
-
-
 
     function createItem(  string memory _str, address _to , uint256 _tokenId) public {
         last_token_id = _tokenId;
